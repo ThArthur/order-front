@@ -10,3 +10,11 @@ Aplicação web construída com **Next.js** e **Material UI**, com suporte a req
 - [React](https://reactjs.org/)
 - [Material UI (MUI)](https://mui.com/)
 - [Axios](https://axios-http.com/)
+
+## Passos para executar
+
+```bash
+git clone https://github.com/ThArthur/order-front.git
+cd order-front
+npm install
+npm run dev
