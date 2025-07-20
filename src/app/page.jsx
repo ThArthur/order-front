@@ -4,9 +4,7 @@ import './page.css'
 import Button from "@mui/material/Button";
 import React, { useEffect, useState } from "react";
 import CreateOrderModal from "@/components/Order/CreateOrderModal/CreateOrderModal";
-import {Alert, Paper, Snackbar} from "@mui/material";
-import {DataGrid} from '@mui/x-data-grid';
-import api from "@/axios/api";
+import {Alert, Snackbar} from "@mui/material";
 import CustomTable from "@/components/CustomTable/CustomTable";
 
 export default function Home() {

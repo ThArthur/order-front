@@ -1,6 +1,6 @@
 "use client"
 
-import React, {use, useState} from "react";
+import React, {useState} from "react";
 import "./index.css"
 import CustomTable from "@/components/CustomTable/CustomTable";
 import ProductDialog from "@/components/product/ProductDialog";
