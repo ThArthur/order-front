@@ -7,7 +7,7 @@ import CreateOrderModal from "@/components/Order/CreateOrderModal/CreateOrderMod
 import {Alert, Paper, Snackbar} from "@mui/material";
 import {DataGrid} from '@mui/x-data-grid';
 import api from "@/axios/api";
-import CustomTable from "@/components/ClientTable/CustomTable";
+import CustomTable from "@/components/CustomTable/CustomTable";
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);

@@ -2,7 +2,7 @@
 
 import React, {use, useState} from "react";
 import "./index.css"
-import CustomTable from "@/components/ClientTable/CustomTable";
+import CustomTable from "@/components/CustomTable/CustomTable";
 import ProductDialog from "@/components/product/ProductDialog";
 import Button from "@mui/material/Button";
 import api from "@/axios/api";

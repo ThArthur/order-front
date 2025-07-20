@@ -1,7 +1,7 @@
 'use client';
 
 import './index.css'
-import CustomTable from "@/components/ClientTable/CustomTable";
+import CustomTable from "@/components/CustomTable/CustomTable";
 import {useState} from "react";
 import Button from "@mui/material/Button";
 import ClientDialog from "@/components/ClientDialog/ClientDialog";
