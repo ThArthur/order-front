@@ -1,45 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import api from "@/axios/api";
+import React, { useEffect, useRef } from "react";
 import { ChevronRight, Users } from "@geist-ui/icons";
 import "./SelectClientStep.css";
+import {useClientPagination} from "@/hooks/useClients";
 
-const SelectClientStep = ({ orderData, setOrderData, onNext }) => {
-  const [clients, setClients] = useState([]);
-  const [page, setPage] = useState(0);
-  const [hasMore, setHasMore] = useState(true);
-  const sentinelRef = useRef(null);
+const SelectClientStep = ({ selectClient }) => {
+  const { clients, isLoadingClients, hasMore, sentinelRef } = useClientPagination();
 
-  useEffect(() => {
-    api.get("client", { params: { page } }).then((response) => {
-      setClients((prev) => [...prev, ...response.data.content]);
-      if (response.data.last) setHasMore(false);
-    });
-  }, [page]);
 
-  useEffect(() => {
-    if (!hasMore) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setPage((prev) => prev + 1);
-        }
-      },
-      { threshold: 1.0 }
-    );
-
-    const current = sentinelRef.current;
-    if (current) observer.observe(current);
-
-    return () => {
-      if (current) observer.unobserve(current);
-    };
-  }, [hasMore]);
-
-  const handleSelectClient = (client) => {
-    setOrderData({ ...orderData, client });
-    onNext();
-  };
 
   return (
     <div className="client-step-container">
@@ -52,11 +19,11 @@ const SelectClientStep = ({ orderData, setOrderData, onNext }) => {
         </div>
 
         <div className="client-list-wrapper">
-          {clients.map((client) => (
+          {clients?.map((client) => (
             <div
               key={client.id}
               className="client-container"
-              onClick={() => handleSelectClient(client)}
+              onClick={() => selectClient(client)}
             >
               <label>{client.name}</label>
               <label>
@@ -70,7 +37,7 @@ const SelectClientStep = ({ orderData, setOrderData, onNext }) => {
               ref={sentinelRef}
               style={{ display: "flex", justifyContent: "center", alignItems: "center" }}
             >
-              Carregando outros clientes...
+              Carregando mais clientes...
             </div>
           )}
         </div>

@@ -1,0 +1,107 @@
+.table-wrapper {
+    overflow: hidden;
+    user-select: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2),
+    0 2px 10px rgba(0, 0, 0, 0.14),
+    0 1px 18px rgba(0, 0, 0, 0.12);
+    height: 100%;
+    overflow-y: auto;
+    @media (max-width: 600px) {
+        border: none;
+    }
+}
+
+.desktop-table {
+
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
+
+#custom-table {
+    width: 100%;
+    font-size: 14px;
+}
+
+#custom-table thead tr td {
+    padding: 18px 20px;
+    background-color: #FFFFFF;
+}
+
+#overflow-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.body-padding {
+    padding: 18px 20px;
+}
+
+.table-background {
+    background-color: #FFFFFF;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.custom-body {
+    font-size: 14px;
+}
+
+.auto-width {
+    width: auto !important;
+    white-space: nowrap;
+    max-width: 1px;
+}
+
+.page-button {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #FFFFFF;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.general-mobile-body {
+    display: none;
+    overflow-y: auto;
+
+    @media (max-width: 600px) {
+        display: block;
+    }
+}
+
+.mobile-item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.mobile-item-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#custom-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+#custom-table tfoot {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+}

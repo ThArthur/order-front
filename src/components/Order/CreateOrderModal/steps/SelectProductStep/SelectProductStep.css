@@ -25,7 +25,7 @@
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    height: 60px;
     border-top: #EEEEEE solid 1px;
 }
 
@@ -40,4 +40,18 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    flex: 1.5;
+}
+
+.item-quantity-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 600px) {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 4px;
+    }
+
 }
