@@ -1,0 +1,43 @@
+.product-step-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-list-container {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.product-list-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    color: #4d6bfe;
+    font-size: 1.2rem;
+}
+
+.product-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-top: #EEEEEE solid 1px;
+}
+
+.product-container:hover {
+    background-color: lightgray;
+    transition: background-color .3s ease-in-out;
+    cursor: pointer;
+}
+
+.item-selected {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
