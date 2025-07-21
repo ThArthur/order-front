@@ -10,21 +10,27 @@ export function useClientPagination() {
 
   const fetchedPages = useRef(new Set());
 
+  const queueRef = useRef(Promise.resolve());
+
   const getClients = useCallback(async (pageNumber) => {
     if (fetchedPages.current.has(pageNumber)) return;
 
-    setIsLoadingClients(true);
-    try {
-      const { data } = await api.get(`/client?page=${pageNumber}`);
+    queueRef.current = queueRef.current.then(async () => {
+      setIsLoadingClients(true);
+      try {
+        const { data } = await api.get(`/client?page=${pageNumber}`);
 
-      setClients((prev) => [...prev, ...data.content]);
-      setHasMore(!data.last);
-      fetchedPages.current.add(pageNumber);
-    } catch (e) {
-      console.error("Erro ao carregar clientes:", e);
-    } finally {
-      setIsLoadingClients(false);
-    }
+        setClients((prev) => [...prev, ...data.content]);
+        setHasMore(!data.last);
+        fetchedPages.current.add(pageNumber);
+      } catch (e) {
+        console.error("Erro ao carregar clientes:", e);
+      } finally {
+        setIsLoadingClients(false);
+      }
+    });
+
+    return queueRef.current;
   }, []);
 
   useEffect(() => {
