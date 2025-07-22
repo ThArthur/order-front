@@ -1,10 +1,10 @@
-# 🚀 Projeto Next.js com Material UI
+# Projeto Next.js com Material UI
 
 Aplicação web construída com **Next.js** e **Material UI**, com suporte a requisições assíncronas, componentes reutilizáveis e modais para criação de pedidos e gerenciamento de clientes.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - [Next.js](https://nextjs.org/)
 - [React](https://reactjs.org/)
